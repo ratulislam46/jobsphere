@@ -5,7 +5,7 @@ import team2 from '../../assets/team/team2.jpg'
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-gray-800 ">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='flex-1'>
                     <motion.img
@@ -27,7 +27,7 @@ const Banner = () => {
                         animate={{ rotate: 360, transition: { duration: 2 } }} className="text-5xl font-bold">Latest jobs for you!
                     </motion.h1> */}
 
-                    <h1 className='text-5xl font-bold'>
+                    <h1 className='text-5xl font-bold text-white'>
                         <motion.span
                             animate={{
                                 color: ['#ff5733', '#4fff33', '#339cff', '#33ffe0', '#ff333f', '#4933ff'],
@@ -39,7 +39,7 @@ const Banner = () => {
                     <motion.p
                         initial={{ scale: 0 }}
                         animate={{ scale: 1, transition: { duration: 2 } }}
-                        className="py-6 text-2xl"> Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                        className="py-6 text-2xl text-gray-300"> Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.</motion.p>
 
                     <button className="btn btn-primary">Get Started</button>
