@@ -5,7 +5,7 @@ import { Link, useLoaderData } from 'react-router';
 const JobsDetails = () => {
 
     const data = useLoaderData()
-    console.log(data);
+    // console.log(data);
 
     const { _id, applicationDeadline, company, company_logo, description, hr_email, jobType, location, requirements, hr_name, responsibilities, salaryRange, status, title } = data
 
@@ -63,7 +63,7 @@ const JobsDetails = () => {
 
                 <div className="flex justify-between text-black">
                     <button className='btn btn-soft btn-info mt-6'>
-                        <Link >Apply Now</Link>
+                        <Link to={`/jobApply/${_id}`} >Apply Now</Link>
                     </button>
                     <h2 className="bg-green-500 px-6 flex items-center rounded-2xl
                      text-white">{status}</h2>

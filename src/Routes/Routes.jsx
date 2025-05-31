@@ -4,6 +4,9 @@ import Home from '../Home/Home'
 import Register from "../Share/Register/Register";
 import Login from "../Share/Login/Login";
 import JobsDetails from "../Share/Jobs/JobsDetails";
+import PrivateRoute from "../Share/PrivateRoute/PrivateRoute";
+import JobApply from '../Share/JobApply/JobApply'
+import MyApplications from "../Share/MyApplications/MyApplications";
 
 
 export const router = createBrowserRouter([
@@ -15,7 +18,7 @@ export const router = createBrowserRouter([
                 index: true,
                 path: '/',
                 Component: Home,
-                loader: ()=>fetch('http://localhost:3000/jobs')
+                loader: () => fetch('https://jobsphere-server-indol.vercel.app/jobs')
             },
             {
                 path: '/register',
@@ -28,7 +31,19 @@ export const router = createBrowserRouter([
             {
                 path: '/jobs/:id',
                 Component: JobsDetails,
-                loader: ({params})=> fetch(`http://localhost:3000/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://jobsphere-server-indol.vercel.app/jobs/${params.id}`)
+            },
+            {
+                path: '/jobApply/:id',
+                element: <PrivateRoute>
+                    <JobApply></JobApply>
+                </PrivateRoute>
+            },
+            {
+                path: '/myApplications',
+                element: <PrivateRoute>
+                    <MyApplications></MyApplications>
+                </PrivateRoute>
             }
         ]
     },
