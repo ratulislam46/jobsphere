@@ -8,11 +8,12 @@ const SingleJobs = ({ jobs }) => {
 
     const { _id, category, company_logo, description, jobType, location, requirements, salaryRange, title } = jobs
 
+
     return (
         <div className=' border p-6 rounded-xl'>
             <div className='flex gap-4'>
                 <div>
-                    <img src={company_logo} alt="image" className='w-16' />
+                    <img src={company_logo} alt="image" className="w-16" />
                 </div>
                 <div>
                     <h1 className='text-3xl font-bold'>{category}</h1>
@@ -29,7 +30,7 @@ const SingleJobs = ({ jobs }) => {
             <p className='text-xl text-gray-500'>{description}</p>
             <div className='py-4'>
                 {
-                    requirements.map((req, index) => <button key={index} className="px-4 mb-2 bg-gray-200 py-1 mr-2 rounded hover:text-blue-500">{req}</button>)
+                    requirements?.map((req, index) => <button key={index} className="px-4 mb-2 bg-gray-200 py-1 mr-2 rounded hover:text-blue-500">{req}</button>)
                 }
             </div>
             <div>

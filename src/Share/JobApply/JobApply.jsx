@@ -30,7 +30,7 @@ const JobApply = () => {
             resume
         }
         
-        axios.post('https://jobsphere-server-indol.vercel.app/applications', applicantion)
+        axios.post('http://localhost:3000/applications', applicantion)
             .then((res) => {
                 console.log(res.data);
                 Swal.fire({

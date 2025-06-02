@@ -32,7 +32,7 @@ const JobsDetails = () => {
                     <div className="mb-3">
                         <h4 className="font-semibold text-black">Requirements:</h4>
                         <ul className="list-disc ml-6 text-gray-600">
-                            {requirements.map((req, idx) => (
+                            {requirements?.map((req, idx) => (
                                 <li key={idx}>{req}</li>
                             ))}
                         </ul>
@@ -41,7 +41,7 @@ const JobsDetails = () => {
                     <div className="mb-3">
                         <h4 className="font-semibold text-black">Responsibilities:</h4>
                         <ul className="list-disc ml-6 text-gray-600">
-                            {responsibilities.map((res, idx) => (
+                            {responsibilities?.map((res, idx) => (
                                 <li key={idx}>{res}</li>
                             ))}
                         </ul>

@@ -7,6 +7,9 @@ import JobsDetails from "../Share/Jobs/JobsDetails";
 import PrivateRoute from "../Share/PrivateRoute/PrivateRoute";
 import JobApply from '../Share/JobApply/JobApply'
 import MyApplications from "../Share/MyApplications/MyApplications";
+import AddJob from "../Share/AddJob/AddJob";
+import MyPostJob from "../Share/MyPostJob/MyPostJob";
+import ViewApplication from "../Share/ViewApplication/ViewApplication";
 
 
 export const router = createBrowserRouter([
@@ -18,7 +21,7 @@ export const router = createBrowserRouter([
                 index: true,
                 path: '/',
                 Component: Home,
-                loader: () => fetch('https://jobsphere-server-indol.vercel.app/jobs')
+                loader: () => fetch('http://localhost:3000/jobs')
             },
             {
                 path: '/register',
@@ -31,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 path: '/jobs/:id',
                 Component: JobsDetails,
-                loader: ({ params }) => fetch(`https://jobsphere-server-indol.vercel.app/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/jobs/${params.id}`)
             },
             {
                 path: '/jobApply/:id',
@@ -43,6 +46,25 @@ export const router = createBrowserRouter([
                 path: '/myApplications',
                 element: <PrivateRoute>
                     <MyApplications></MyApplications>
+                </PrivateRoute>
+            },
+            {
+                path: '/applications/:job_id',
+                element: <PrivateRoute>
+                    <ViewApplication></ViewApplication>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/applications/job/${params.job_id}`)
+            },
+            {
+                path: '/addJob',
+                element: <PrivateRoute>
+                    <AddJob></AddJob>
+                </PrivateRoute>
+            },
+            {
+                path: '/myPostJob',
+                element: <PrivateRoute>
+                    <MyPostJob></MyPostJob>
                 </PrivateRoute>
             }
         ]

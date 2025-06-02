@@ -6,7 +6,7 @@ import { img } from 'motion/react-client';
 const Navbar = () => {
 
     const { user, LogOut } = use(AuthContext)
-    console.log(user);
+    // console.log(user);
 
     const links =
         <>
@@ -14,6 +14,12 @@ const Navbar = () => {
             {
                 user && <>
                     <li><NavLink to='/myApplications'>My Applications</NavLink></li>
+                </>
+            }
+            {
+                user && <>
+                <li><NavLink to='/addJob'>Add Job</NavLink></li>
+                <li><NavLink to='/myPostJob'>My Post Job</NavLink></li>
                 </>
             }
         </>
