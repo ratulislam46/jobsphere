@@ -1,7 +1,7 @@
 import React, { Suspense, use } from 'react';
 import { AuthContext } from '../../Auth/AuthProvider.jsx';
 import ApplicationList from './ApplicationList.jsx';
-import { myApplicationPromise } from '../../services/ApplicationApi.js';
+import { myApplicationPromise } from '../../services/applicationApi.js';
 
 
 
